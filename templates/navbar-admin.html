@@ -1,0 +1,81 @@
+{%load static%}
+
+<style>
+    .nav{
+        width: 100%;
+    }
+</style>
+
+	
+
+
+	<hr>
+<div class="container-fluid">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white nav  "style='width=100%'>
+	<ul class="navbar-nav ml-auto text-center ">
+
+
+
+        </ul>
+
+{% if user.is_authenticated %}
+
+        <ul class="  navbar-nav ml-auto">
+
+            <li class="nav-item " style="margin-right:350px;">
+
+                <a  class="btn btn-warning" href="dash" style=" border-radius: 25px;color:white;height:50px;width:135px;padding:15px;">Dashboard</a>
+            </li>
+
+             <li class=" h3 text-danger  " style='margin-right:220px'>
+            Prs. Manpower
+        </li>
+
+
+            <li class="nav-item">
+
+                <li class="nav-item">
+                    <div class="ml-3 mt-3 mr-3"> {{request.user.username}}</div>
+                </li>
+            </a>
+
+
+                <li class="nav-item log"style="margin-right:10px;">
+                    <a class="btn btn-danger  " href="/logout" style=" border-radius: 25px;color:white;height:50px;">Logout</a>
+                </li>
+
+                 <li class="nav-item">
+                    <a class="btn btn-warning" href="/password_change"style=" border-radius: 25px;color:white;height:50px;width:135px;padding:15px;">Change Psw</a>
+                </li>
+
+
+
+    </ul>
+
+        {% else %}
+  <ul class="  navbar-nav ml-auto">
+    <li class="nav-item">
+        <a class="btn btn-primary btn-sm mx-2" href="/login">Login</a>
+    </li>
+    <li class="nav-item">
+        <a class="btn btn-warning btn-sm mx-2" href="/register">Register</a>
+    </li>
+  </ul>
+
+
+
+      {% endif %}
+	</ul>
+
+</nav>
+
+
+
+
+
+
+
+
+</div>

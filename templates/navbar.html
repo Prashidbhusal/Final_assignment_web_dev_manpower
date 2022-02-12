@@ -1,0 +1,91 @@
+{%load static%}
+<section>
+	
+
+
+<div class="d-flex" style="background-color:#1f2027;">
+	<div class="logo_div" style="margin-top:12px;">
+
+		  <a class="navbar-brand" href="index.html">
+		  <span>Manpower</span>
+		  </a>
+
+		</div>
+
+
+<nav class="navbar navbar-expand-lg navbar-light nav " style="background-color:#222328;">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" >
+      <li class="nav-item space " style="margin-left:180px;">
+        <a class="nav-link " href="/" style="color:white;">Home</a>
+      </li>
+      <li class="nav-item space">
+        <a class="nav-link" href="/about"  style="color:white;">About us </a>
+      </li>
+
+       <li class="nav-item space">
+        <a class="nav-link" href="/jobs"  style="color:white;">Jobs</a>
+      </li>
+
+       <li class="nav-item space">
+        <a class="nav-link" href="/gallery"  style="color:white;">Gallery</a>
+      </li>
+
+       <li class="nav-item space">
+        <a class="nav-link" href="/contact"  style="color:white;">Contact</a>
+      </li>
+
+
+      <li class="nav-item dropdown space">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="color:white;">
+          Procedure
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/reqDoc">Required Documents</a>
+
+          <a class="dropdown-item" href="/visa_p">Visa Processing</a>
+
+          <a class="dropdown-item" href="/visa_step">Visa Processing Step</a>
+
+
+
+        </div>
+      </li>
+
+    </ul>
+
+{% if user.is_authenticated %}
+     <ul class="  navbar-nav ml-auto">
+    <li class="nav-item" style="margin-right:10px;">
+        <a class="btn btn-outline-danger" href="/logout" style=" border-radius: 25px;color:white;height:50px;">Logout</a>
+    </li>
+    <li class="nav-item">
+        <a class="btn btn-outline-warning" href="/password_change"style=" border-radius: 25px;color:white;height:50px;width:135px;padding:15px;">Change Psw</a>
+    </li>
+  </ul>
+
+
+        {% else %}
+  <ul class="  navbar-nav ml-auto">
+    <li class="nav-item" style="margin-right:10px;">
+        <a class="btn btn-outline-success" href="/login" style=" border-radius: 25px;color:white;height:50px;">Login</a>
+    </li>
+    <li class="nav-item">
+        <a class="btn btn-outline-danger" href="/register"style=" border-radius: 25px;color:white;height:50px;width:135px;">Register</a>
+    </li>
+  </ul>
+
+
+
+      {% endif %}
+
+  </div>
+</nav>
+</div>
+
+

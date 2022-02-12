@@ -1,0 +1,68 @@
+{% extends 'layout-admin.html' %}
+{% load static %}
+
+{% load getApplicants %}
+{% block title %}
+    <title></title>
+{% endblock %}
+{% block content %}
+<style>
+    label{
+    display:none;
+    }
+</style>
+
+    <div class="container">
+      {% for message in messages %}
+      {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+      <h6 class="alert alert-success py-3 px-1 my-2 text-center">{{message}}</h6>
+      {% endif %}
+      {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR%}
+      <h6 class="alert alert-danger py-3 px-1 my-2 text-center">{{message}}</h6>
+      {% endif %}
+      {% endfor %}
+         <a href="/admins/addvacancy" class="btn btn-primary offset-2">Add vacancy</a>
+        <div class="d-flex justify-content-end">
+
+        <form class="jusify-content-end">
+            {{totalvacancy_filter.form}}
+            <input type="submit" value="Search">
+        </form>
+
+        </div>
+
+        <div class="mt-5 border border-4 col-md-12 ">
+            <table class="table table-hover ">
+                <thead>
+                  <th>S.N.</th>
+                    <th>Title</th>
+                    <th>Salary</th>
+                    <th>No of vacancies</th>
+                    <th>Applicants</th>
+                    <th>Action</th>
+
+                </thead>
+                <tbody>
+                    
+                    {% for i in total_final  %}
+                    <tr>
+                      <td>{{forloop.counter}}</td>
+                    <td>{{i.title|truncatechars:25}}</td>
+                    <td>{{i.salary}}</td>
+                    <td>{{i.totalVacancy}}</td>
+                    <td>{{i.id|getApplicants}}</td>
+                    <td>
+                      <a href="/admins/editvacancy/{{i.id}}" class="btn btn-outline-primary btn-sm">Edit</a>
+                      <a href="" class="btn btn-danger btn-sm" onclick="return confirm('Want to delete?')">Delete</a>
+                    </td>
+                
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+{%endblock%}

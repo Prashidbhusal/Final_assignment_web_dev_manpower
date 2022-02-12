@@ -1,0 +1,140 @@
+
+*{
+	overflow-x:wrap;
+	}
+	
+
+.top{
+
+	display:flex;
+	margin-top:15px;
+
+}
+
+.lic{
+	margin-left: 150px;
+}
+
+.email{
+	margin-left:550px;
+
+}
+.phone{
+	margin-left:40px;
+
+}
+.logos{
+	height:80px;
+	width:250px
+	margin-left(50px)}
+
+
+.logo_div{
+	display:flex;
+	margin-left:30px;
+}
+.nav{
+	width:1180px;
+	background-color:rgb(136, 108, 113);
+	font-family:bold;
+	font-size:17px;
+
+}
+.space{
+	margin-left:30px;
+}
+
+.social{
+margin-left:1050px;}
+
+.carousel{
+	height:450px;
+	width:100%;
+}
+
+.middle_heading{
+	margin-left:400px;
+}
+.image_caption{
+	bottom:150px;
+
+}
+
+@media (max-width: 768px) {
+
+.log{
+ font-size: 10px;
+ padding:5px;
+}
+
+
+.social{
+margin-left:250px;}
+
+.middle_heading{
+	margin:20px;
+}
+
+.head{
+margin:0px;
+}
+
+.email{
+margin:20px;
+display:flex;
+}
+
+
+ .top{
+ display:flex;
+ flex-direction:column;
+ color:red;
+
+ }
+ .lic_class{
+ margin:20px;
+ }
+ .lic{
+ margin:0px;}
+ }
+ .navbar-toggler{
+ margin-left:80%;}
+ .phone{
+ margin:0px;}
+
+
+ 
+
+.fa {
+  padding: 50px;
+text-align: center;
+  margin: 8px 5px;
+  font-size: 100px;
+  width: 80px;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+

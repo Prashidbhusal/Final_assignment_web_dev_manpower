@@ -1,0 +1,30 @@
+{% extends 'layout-admin.html' %}
+{% load static %}
+{% block title %}
+    <title></title>
+{% endblock %}
+{% block content %}
+
+
+    <div class="container m-5"><br>
+
+        <h4 class="text-center">Add Vacancy</h4>
+        {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+        <h6 class="alert alert-success py-3 px-1 my-2 text-center">{{message}}</h6>
+        {% endif %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR%}
+        <h6 class="alert alert-danger py-3 px-1 my-2 text-center">{{message}}</h6>
+        {% endif %}
+        {% endfor %}
+        
+              <form  action="" method="POST">
+                {% csrf_token%}
+                <table class="table">
+                    {{form.as_table}}
+                </table>
+                <button type="submit"  class="btn btn-primary btn-sm">Save</button>
+              </form>
+                 
+        </div>
+{% endblock %}

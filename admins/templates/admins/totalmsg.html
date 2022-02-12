@@ -1,0 +1,82 @@
+{% extends 'layout-admin.html' %}
+{% load static %}
+{% block title %}
+    <title></title>
+{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <h4 class="text-center">Unseen</h4>
+
+        <div class="  border border-4 col-lg-12">
+            <table class="table table-hover">
+                <thead>
+                  <th>S.N.</th>
+                    <th>Name</th>
+                    <th>email</th>
+                    <th>Date</th>
+                    <th>Action</th>
+
+                </thead>
+                <tbody>
+                    
+                    {% for i in totalmsg_us  %}
+                    <tr>
+                      <td>{{forloop.counter}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.date}}</td>
+                    
+                    <td>
+                      <a href="/admins/msg-detail/{{i.id}}" class="btn btn-outline-primary btn-sm">View</a>
+                      
+                    </td>
+                
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+
+            </table>
+
+        </div>
+        <h4 class="text-center">Seen</h4>
+
+        <div class="  border border-4 col-lg-12">
+            <table class="table table-hover ">
+                <thead>
+                  <th>S.N.</th>
+                    <th>Name</th>
+                    <th>email</th>
+                    <th>Date</th>
+                    <th>Action</th>
+
+                </thead>
+                <tbody>
+                    
+                    {% for i in totalmsg_sn  %}
+                    <tr>
+                      <td>{{forloop.counter}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.date}}</td>
+                    
+                    <td>
+                      <a href="/admins/msg-detail/{{i.id}}" class="btn btn-outline-primary btn-sm">View</a>
+                      
+                    </td>
+                
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+
+  
+
+  {%endblock%}

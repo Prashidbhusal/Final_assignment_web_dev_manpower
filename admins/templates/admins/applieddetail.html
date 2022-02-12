@@ -1,0 +1,29 @@
+{% extends 'layout-admin.html' %}
+{% load static %}
+{% block title %}
+    <title></title>
+  {% endblock %}
+{% block content %}
+
+    <div class="container">
+        <h4 class="text-center">Applicant details</h4>
+        <h4 class="text-center">{{from.vacancy.title}}</h4>
+        <div class=" m-5 border border-4 col-lg-12">
+
+            <p>Name:&nbsp;<b>{{form.name}}</b></p>
+            <p>Dob:&nbsp;<b>{{form.dob}}</b></p>
+            <p>Qualification:&nbsp;<b>{{form.qualification}}</b></p>
+            <p>Citizenship:</p><img src="/{{form.citizenship}}" height="200" width="200" alt="citizen">
+            <p>CV: &nbsp; <a href="{{form.cv.url}}" target="_blank">{{form.filename}}</a></p><br>
+
+            <div>
+              <form  action="" method="POST">
+                {% csrf_token%}
+                <label for="res" class="form-control">Response:</label>
+                <input type="text" class="form-control" value="{{form.response}}" name="response" id="res" placeholder="response"><br>
+                <button type="submit"  class="btn btn-primary btn-sm">Save response</button>
+              </form>
+            </div>        
+        </div>
+    </div>
+   {% endblock %}

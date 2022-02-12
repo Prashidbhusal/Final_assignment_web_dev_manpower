@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{%load static%}
+  {% block title %}
+    <title> Login</title>
+    {% endblock%}
+  {% block content %}
+
+  <body>
+
+        <h1 class="offset-md-2 p-5 ">
+          Vacancies
+        </h1>
+
+
+ <!-- actual repetating -->
+    <div class="container-fluid ">
+
+      <p class="col-lg-6">
+        {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+        <h6 class="alert alert-success  py-3 px-1 my-2 text-center">{{message}}</h6>
+        {% endif %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR%}
+        <h6 class="alert alert-danger py-3 px-1 my-2 text-center">{{message}}</h6>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+
+
+
+      <div class="row">
+        {% for i in vacancies %}
+
+        <div class="col-lg-2 m-5">
+          <div class="card" style="width: 18rem;">
+            <img src="{% static 'images/logom.png' %}" class="card-img-top" alt="img">
+            <div class="card-body">
+              <h5 class="card-title">{{i.title}}</h5>
+              <p class="card-text">Salary:&nbsp;{{i.salary}}</p>
+              <p class="card-text">No of Vacancy: &nbsp;{{i.totalVacancy}}</p>
+              
+            
+              <a href="/jobform/{{i.id}}" class="btn btn-primary" style=" border-radius:25px;">Apply Job</a>
+              
+            </div>
+          </div>
+
+        </div>
+          {% endfor %}
+
+       
+
+
+
+
+      </div>
+
+
+
+      <!-- End repetaing  -->
+
+
+     
+
+{%endblock%}

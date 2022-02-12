@@ -1,0 +1,101 @@
+{% extends 'layout-admin.html' %}
+{% load static %}
+{% block title %}
+    <title></title>
+{% endblock %}
+{% block content %}
+
+
+    <div class="container">
+
+      {% for message in messages %}
+      {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+      <h6 class="alert alert-success py-3 px-1 my-2 text-center">{{message}}</h6>
+      {% endif %}
+      {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR%}
+      <h6 class="alert alert-danger py-3 px-1 my-2 text-center">{{message}}</h6>
+      {% endif %}
+      {% endfor %}
+
+
+        <h4 class="text-center">Unseen</h4>
+        <div class="  border border-4 col-lg-12">
+            <table class="table table-hover">
+                <thead>
+                  <th>S.N.</th>
+                    <th>Vacancy</th>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Action</th>
+
+                </thead>
+                <tbody>
+                    
+                    {% for i in totapp_us  %}
+                    <tr>
+                      <td>{{forloop.counter}}</td>
+                    <td>{{i.vacancy.title|truncatechars:13}}</td>
+                    <td>{{i.user}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.dob}}</td>
+                    
+                    
+                    <td>
+                      <a href="/admins/applied-detail/{{i.id}}" class="btn btn-outline-primary btn-sm">View details</a>
+                      <a href="" class="btn btn-danger btn-sm">Delete</a>
+                      
+                    </td>
+                
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+
+            </table>
+
+        </div><hr>
+        <h4 class="text-center">Seen</h4>
+
+        <div class=" border border-4 col-lg-12">
+            <table class="table table-hover ">
+                <thead>
+                  <th>S.N.</th>
+                    <th>Vacancy</th>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Action</th>
+
+                </thead>
+                <tbody>
+                    
+                    {% for i in totapp_sn  %}
+                    <tr>
+                      <td>{{forloop.counter}}</td>
+                    <td>{{i.vacancy.title|truncatechars:13}}</td>
+                    <td>{{i.user}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.dob}}</td>
+                    
+                    
+                    <td>
+                      <a href="/admins/applied-detail/{{i.id}}" class="btn btn-outline-primary btn-sm">View details</a>
+                      <a href="" class="btn btn-danger btn-sm" onclick="return confirm('Want to delete?')">Delete</a>
+                      
+                    </td>
+                
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+
+  
+
+  {% endblock %}

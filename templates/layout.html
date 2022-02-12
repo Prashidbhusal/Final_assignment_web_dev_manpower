@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link href="{%static 'css/bootstrap.min.css'%}" rel="stylesheet" type="text/css" />
+    <link href="{%static 'css/home.css'%}" rel="stylesheet" type="text/css" />
+    <link href="{%static 'css/templatemo-breezed.css'%}" rel="stylesheet" type="text/css" />
+    <link href="{%static 'css/flex-slider.css'%}" rel="stylesheet" type="text/css" />
+    <link href="{%static 'css/font-awesome.css'%}" rel="stylesheet" type="text/css" />
+    <link href="{%static 'css/lightbox.css'%}" rel="stylesheet" type="text/css" />
+    <link href="{%static 'css/owl-carousel.css'%}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+    <meta charset="UTF-8">
+      <meta name="author" content="themefisher.com">
+    {% block title %}
+    {{ section.title }}
+    {% endblock %}
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    {% block content %}
+
+    {% endblock %}
+
+ {% include 'footer.html' %}
+
+
+</div>
+<script src="{%static 'js/jquery-2.1.0.min.js'%}"></script>
+<script src="{%static 'js/popper.js'%}"></script>
+<script src="{%static 'js/bootstrap.min.js'%}"></script>
+
+
+
+
+<script src="{%static 'js/slick.js'%}"></script>
+<script src="{%static 'js/isotope.js'%}"></script>
+<script src="{%static 'js/owl-carousel.js'%}"></script>
+<script src="{%static 'js/scrollreveal.min.js'%}"></script>
+
+<script src="{%static 'js/imgfix.min.js'%}"></script>
+<script src="{%static 'js/jquery.counterup.min.js'%}"></script>
+<script src="{%static 'js/lightbox.js'%}"></script>
+
+<script src="{%static 'js/waypoints.min.js'%}"></script>
+<script src="{%static 'js/custom.js'%}"></script>
+
+
+
+
+
+  <script src="{% static 'plugins/jquery/jquery.js'%}"></script>
+    <script src="{% static 'js/contact.js'%}"></script>
+    <!-- Bootstrap 4.3.1 -->
+    <script src="{% static 'plugins/bootstrap/js/popper.js'%}"></script>
+    <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js'%}"></script>
+   <!--  Magnific Popup-->
+    <script src="{% static 'plugins/magnific-popup/dist/jquery.magnific-popup.min.js'%}"></script>
+    <!-- Slick Slider -->
+    <script src="{% static 'plugins/slick-carousel/slick/slick.min.js'%}"></script>
+    <!-- Counterup -->
+    <script src="{% static 'plugins/counterup/jquery.waypoints.min.js'%}"></script>
+    <script src="{% static 'plugins/counterup/jquery.counterup.min.js'%}"></script>
+
+    <!-- Google Map -->
+    <script src="{% static 'plugins/google-map/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>
+
+    <script src="{% static 'js/script.js'%}"></script>
+
+<script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+
+            });
+        });
+
+</script>
+</body>
+</html>
