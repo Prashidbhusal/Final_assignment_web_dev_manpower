@@ -40,6 +40,9 @@
         <a class="nav-link" href="/contact"  style="color:white;">Contact</a>
       </li>
 
+      <li class="nav-item space">
+        <a class="nav-link" href="/profile"  style="color:white;">Profile</a>
+      </li>
 
       <li class="nav-item dropdown space">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="color:white;">
@@ -60,6 +63,19 @@
     </ul>
 
 {% if user.is_authenticated %}
+
+<style>
+  #hello-msg{
+    font-size: 18px;
+    color: #fff;
+    margin-right: 20px;
+    
+
+  }
+</style>
+
+
+<span id="hello-msg">Hello, {{request.user}}</span>
      <ul class="  navbar-nav ml-auto">
     <li class="nav-item" style="margin-right:10px;">
         <a class="btn btn-outline-danger" href="/logout" style=" border-radius: 25px;color:white;height:50px;">Logout</a>
@@ -83,9 +99,10 @@
 
 
       {% endif %}
+    
 
   </div>
 </nav>
-</div>
+</div> 
 
 

@@ -3,7 +3,11 @@
 {% block title %}
 <title>Add User</title>
 {% endblock%}
+<!-- Bootstrap start -->
+           
 
+
+<!-- bootstrap end -->
 
 {% block content %}
 <div class="container">
@@ -21,6 +25,12 @@
           {% endfor %}
           <h1 class="text-center p-5">Add New User</h1>
           <div class="card py-2 px-2">
+<!-- Bootstrap start -->
+           
+    
+
+
+<!-- bootstrap end -->
               <form class="form" action="" method="POST">
                   {% csrf_token%}
                   {{form.username.label}}
