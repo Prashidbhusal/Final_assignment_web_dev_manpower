@@ -23,7 +23,7 @@ def register_user(request):
             Profile.objects.create(user=user, username=user.username)
             messages.add_message(request,messages.SUCCESS,
                                  'User registered successfully')
-            return redirect('/s')
+            return redirect('/login')
         else:
             messages.add_message(request,messages.ERROR,
                                  'Error in registering user')
